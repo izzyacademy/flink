@@ -30,7 +30,9 @@ import org.junit.runners.Parameterized;
 
 import java.net.URI;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /** Tests for the AzureFSFactory. */
 @RunWith(Parameterized.class)
@@ -40,13 +42,21 @@ public class AzureFSFactoryTest extends TestLogger {
 
     @Parameterized.Parameters(name = "Scheme = {0}")
     public static List<String> parameters() {
-        return Arrays.asList("wasb", "wasbs");
+        return Arrays.asList("wasb", "wasbs", "abfs", "abfss");
     }
 
     @Rule public final ExpectedException exception = ExpectedException.none();
 
     private AbstractAzureFSFactory getFactory(String scheme) {
-        return scheme.equals("wasb") ? new AzureFSFactory() : new SecureAzureFSFactory();
+
+        Map<String, AbstractAzureFSFactory> factories = new HashMap<String, AbstractAzureFSFactory>();
+
+        factories.put("wasb", new AzureFSFactory());
+        factories.put("wasbs", new SecureAzureFSFactory());
+        factories.put("abfs", new AzureDataLakeStoreFSFactory());
+        factories.put("abfss", new SecureAzureDataLakeStoreFSFactory());
+
+        return factories.get(scheme);
     }
 
     @Test

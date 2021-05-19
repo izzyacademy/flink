@@ -17,15 +17,16 @@
  */
 
 package org.apache.flink.fs.azurefs;
+
 /**
- * A factory for the Azure file system over HTTP.
+ * A factory for the Azure Data Lake Store File System securely.
  *
- * https://hadoop.apache.org/docs/current/hadoop-azure/index.html
+ * https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-abfs-driver
  */
-public class AzureFSFactory extends AbstractAzureFSFactory {
+public class SecureAzureDataLakeStoreFSFactory extends AbstractAzureFSFactory {
 
     @Override
     public String getScheme() {
-        return "wasb";
+        return "abfss";
     }
 }
