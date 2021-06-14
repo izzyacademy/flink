@@ -36,9 +36,19 @@ import java.util.Set;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
- * Abstract factory for AzureFS. Subclasses override to specify the correct scheme (wasb / wasbs).
- * Based on Azure HDFS support in the <a
+ * Abstract factory for AzureFS.
+ *
+ * <p>Subclasses override to specify the correct scheme (wasb, wasbs, abfs, abfss).
+ *
+ * <p>The Blob Storage Support is Based on Azure HDFS support in the <a
  * href="https://hadoop.apache.org/docs/current/hadoop-azure/index.html">hadoop-azure</a> module.
+ *
+ * <p>The Data Lake Storage Gen 2 Support is Based on Azure HDFS support in the <a
+ * href="https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-abfs-driver">azure
+ * data lake store</a> module.
+ *
+ * <p>Documentation is available here <a
+ * href="https://hadoop.apache.org/docs/stable/hadoop-azure/abfs.html">ABFS driver documentation</a>
  */
 public abstract class AbstractAzureFSFactory implements FileSystemFactory {
     private static final Logger LOG = LoggerFactory.getLogger(AzureFSFactory.class);
