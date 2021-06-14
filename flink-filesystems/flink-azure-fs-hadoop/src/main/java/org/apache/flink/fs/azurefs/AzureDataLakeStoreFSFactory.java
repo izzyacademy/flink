@@ -19,9 +19,9 @@
 package org.apache.flink.fs.azurefs;
 
 /**
- * A factory for the Azure Data Lake Store
+ * A factory for the Azure Data Lake Store.
  *
- * https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-abfs-driver
+ * <p>https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-abfs-driver
  */
 public class AzureDataLakeStoreFSFactory extends AbstractAzureFSFactory {
 

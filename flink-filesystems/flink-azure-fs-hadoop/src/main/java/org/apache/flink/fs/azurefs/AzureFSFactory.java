@@ -17,11 +17,8 @@
  */
 
 package org.apache.flink.fs.azurefs;
-/**
- * A factory for the Azure file system over HTTP.
- *
- * https://hadoop.apache.org/docs/current/hadoop-azure/index.html
- */
+
+/** A factory for the Azure file system over HTTP. */
 public class AzureFSFactory extends AbstractAzureFSFactory {
 
     @Override

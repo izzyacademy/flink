@@ -49,7 +49,8 @@ public class AzureFSFactoryTest extends TestLogger {
 
     private AbstractAzureFSFactory getFactory(String scheme) {
 
-        Map<String, AbstractAzureFSFactory> factories = new HashMap<String, AbstractAzureFSFactory>();
+        Map<String, AbstractAzureFSFactory> factories =
+                new HashMap<String, AbstractAzureFSFactory>();
 
         factories.put("wasb", new AzureFSFactory());
         factories.put("wasbs", new SecureAzureFSFactory());

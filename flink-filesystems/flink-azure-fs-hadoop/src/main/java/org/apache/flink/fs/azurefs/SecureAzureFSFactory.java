@@ -17,11 +17,8 @@
  */
 
 package org.apache.flink.fs.azurefs;
-/**
- * A factory for the Azure file system over HTTPs.
- *
- * A factory for the Azure file system over HTTP.
- */
+
+/** A factory for the Azure file system over HTTPs. */
 public class SecureAzureFSFactory extends AbstractAzureFSFactory {
 
     @Override

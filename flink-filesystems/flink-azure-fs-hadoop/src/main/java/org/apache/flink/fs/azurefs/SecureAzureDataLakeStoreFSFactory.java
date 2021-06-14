@@ -18,11 +18,7 @@
 
 package org.apache.flink.fs.azurefs;
 
-/**
- * A factory for the Azure Data Lake Store File System securely.
- *
- * https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-abfs-driver
- */
+/** A factory for the Azure Data Lake Store File System securely. */
 public class SecureAzureDataLakeStoreFSFactory extends AbstractAzureFSFactory {
 
     @Override
